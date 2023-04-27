@@ -23,6 +23,7 @@ public class VendingMachineTest {
         var itemA = new Item("itemA", 1.0, 2);
         var itemB = new Item("itemB", 1.0, 1);
         var itemC = new Item("itemC", 3.0, 1);
+        
         this.inventory.addItem(itemA);
         this.inventory.addItem(itemB);
         this.inventory.addItem(itemC);
@@ -93,8 +94,10 @@ public class VendingMachineTest {
     public void howManyCoinsLeftTest() {
         var vm = new VendingMachine(this.inventory);
         assertEquals(0.0, vm.howManyCoinsLeft());
+
         vm.addCoins(1.0);
         assertEquals(1.0, vm.howManyCoinsLeft());
+
         vm.addCoins(1.0);
         assertEquals(2.0, vm.howManyCoinsLeft());
     }
@@ -103,9 +106,11 @@ public class VendingMachineTest {
     public void withdrawRemainingCoinsTest() {
         var vm = new VendingMachine(this.inventory);
         assertEquals(0.0, vm.withdrawRemainingCoins());
+
         vm.addCoins(1.0);
         assertEquals(1.0, vm.withdrawRemainingCoins());
         assertEquals(0.0, vm.howManyCoinsLeft());
+
         vm.addCoins(1.0);
         assertEquals(1.0, vm.withdrawRemainingCoins());
         assertEquals(0.0, vm.howManyCoinsLeft());

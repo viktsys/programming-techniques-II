@@ -68,6 +68,7 @@ public class HashMapInventoryTest {
 
         inventory.addItem(itemA);
         inventory.addItem(itemB);
+
         assertEquals(2, inventory.numberOfItems());
 
         var item = inventory.getItem("itemA");
@@ -90,10 +91,13 @@ public class HashMapInventoryTest {
     @Test
     public void numberOfItemsTest() throws ItemAlreadyAdded {
         var inventory = new HashMapInventory();
+
         var itemA = new Item("itemA", 1.0, 1);
         var itemB = new Item("itemB", 1.0, 1);
+
         inventory.addItem(itemA);
         inventory.addItem(itemB);
+        
         assertEquals(2, inventory.numberOfItems());
     }
 
